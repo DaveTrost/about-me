@@ -16,24 +16,22 @@
     </header>
     <main>
         <article>
-            <section>
-                <h1>About Me and My Favorite Sports</h1>
-                <p>
-                    I'm wild about fringe sports. Stuff that you've heard of but never tried. Sports that are for long-haired hippies
-                    and skate rats. Well, call me a Gen-Xer. That's just how I like it. 
-                </p>
-                <p>
-                    Here are my favorite sports, in chronological order of my introduction to them:
-                    <ol>
-                        <li>Rock Climbing</li>
-                        <li>Disc Golf</li>
-                        <li>BMX Biking</li>
-                    </ol>
-                </p>
-            </section>
+            <h1>About Me and My Favorite Sports</h1>
+            <p>
+                I'm wild about fringe sports. Stuff that you've heard of but never tried. Sports that are for long-haired hippies
+                and skate rats. Well, call me a Gen-Xer. That's just how I like it. 
+            </p>
+            <p>
+                Here are my favorite sports, in chronological order of my introduction to them:
+            </p>
+            <ol>
+                <li>Rock Climbing</li>
+                <li>Disc Golf</li>
+                <li>BMX Biking</li>
+            </ol>
             <section>
                 <figure class="float-right">
-                    <iframe height="250" src="https://www.youtube.com/embed/83MXWrY8exc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe height="250" src="https://www.youtube.com/embed/83MXWrY8exc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <figcaption class="caption">Me climbing in Squamish, British Columbia</figcaption>
                 </figure>
 
@@ -73,14 +71,14 @@
                 </p>
                 <p>
                     Here are some of my favorite pro players:
-                    <ul>
-                        <li>Eagle McMahon</li>
-                        <li>Catrina Allen</li>
-                        <li>Paul McBeth</li>
-                        <li>Nate Sexton</li>
-                        <li>Kevin Jones</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>Eagle McMahon</li>
+                    <li>Catrina Allen</li>
+                    <li>Paul McBeth</li>
+                    <li>Nate Sexton</li>
+                    <li>Kevin Jones</li>
+                </ul>
             </section>
             <section>
                 <h2>BMX Biking</h2>
@@ -101,9 +99,21 @@
                 </p>
             </section>
         </article>
-        <div class="quiz-box">
+        <!-- <button class="quiz-box" id="quiz-button" onclick="startQuiz()" onmouseover="highlightButton()"> -->
+        <button class="quiz-box" id="quiz-button">
+            Take My Quiz!
+        </button>
+        <div class="quiz-box hidden" id="results-area">
             <p>
-                Take My Quiz!
+                Your grade is <span id=grade-text>100%</span> <br> 
+                <img id="pass-img-1" class="results-mark hidden" src="./assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-1" class="results-mark hidden" src="./assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <img id="pass-img-2" class="results-mark hidden" src="./assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-2" class="results-mark hidden" src="./assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <img id="pass-img-3" class="results-mark hidden" src="./assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-3" class="results-mark hidden" src="./assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <br>
+                <img id="one-correct" class="hidden" src="./assets/1outof3.jpg" alt="image with caption 'one out of 3 ain't bad'">
             </p>
         </div>
     </main>
@@ -112,5 +122,6 @@
             created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost"> my Git Hub</a>
         </p>
     </footer>
+    <script src="./src/index.js" type="module"></script>
 </body>
 </html>
