@@ -31,6 +31,11 @@
 
 ### commit 3
 
+#### Notes at this point
+
+The CSS isn't everything I want it to be. Depending on page size, the iframe video takes up too much or too little space
+Is there a way to add line breaks conditionally?? (like if the browser window is very wide)?
+
 ### Javascript
 
 - import things

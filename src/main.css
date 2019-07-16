@@ -1,3 +1,4 @@
+/* Set up some cool fonts and massage the font sizing */
 @font-face {
     font-family: 'GONGN';
     src: url('../assets/GONGN___.ttf')  format('truetype');
@@ -6,13 +7,86 @@
     font-family: 'JINKY';
     src: url('../assets/JINKY.ttf')  format('truetype');
 }
-
-section h2, h1 {
-    /* font-family: Cambria; */
+section h1 {
     font-family: GONGN;
     /* font-family: JINKY; */
+    font-size: 200%;
+}
+section h2 {
+    font-family: GONGN;
+    /* font-family: JINKY; */
+    width: 100%;
+}
+.caption {
+    font-family: helvetica;
+    font-size: 0.8em
 }
 
-.page {
-    background-color: whitesmoke;
+/* create a centered box for all tags in the body */
+header, main, .quiz-box, footer {
+    width: 80%;
+    border: 0px;
+    padding: 10px;
+    margin: auto;
+}
+.quiz-box {
+    background-color: #ECE159;
+    font-family: JINKY;
+    font-size: 400%;
+    text-align: center;
+}
+
+/* Set a background color behind the content */
+body {
+    background-color: #511638;
+}
+
+/* provide unique colors for the main content boxes */
+main {
+    background-color: #4ACEDB;
+}
+header {
+    background-color: #D85735;
+}
+footer {
+    background-color: #DB2048;
+}
+
+/* set up floating classes */
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+
+/* adjust image sizes */
+.small-logo {
+    height: 60px;
+    padding: 20px;
+}
+.logo-top {
+    vertical-align: middle;
+}
+
+/* The text and images in the header need to be massaged to look good on a single line */
+header {
+    font-size: 130%;
+    text-align: center;
+}
+#alchemy-logo {
+    width: 15%;
+}
+#github-logo {
+    width: 7%;
+}
+
+/* Special formatting for the footer information */
+footer {
+    font-size: 100%;
+}
+
+/* Set the font family for the header and footer */
+header, footer {
+    font-family: 'Rock Salt', cursive;
 }
