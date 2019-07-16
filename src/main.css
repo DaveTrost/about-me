@@ -51,7 +51,9 @@ footer {
     background-color: #ECE159;
     /* font-family: JINKY; */
     font-size: 400%;
-    /* text-align: center; */
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .highlighted {
     text-shadow: 2px 2px rgb(167, 165, 82);

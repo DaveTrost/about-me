@@ -53,7 +53,7 @@ function startQuiz() {
         failImageForQuestion1.classList.remove('hidden');
     }
 
-    const answer2 = prompt('Question 2:\nCan I throw a frisbee 400 feet? (Y/N)');
+    const answer2 = prompt('Question 2:\nDo you think you can beat me in a friendly game of disc golf? (Y/N)');
     if(!isYes(answer2)) {
         correctAnswers++;
         passImageForQuestion2.classList.remove('hidden');
