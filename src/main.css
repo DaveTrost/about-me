@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'GONGN';
+    src: url('../assets/GONGN___.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'JINKY';
+    src: url('../assets/JINKY.ttf')  format('truetype');
+}
+
+section h2, h1 {
+    /* font-family: Cambria; */
+    font-family: GONGN;
+    /* font-family: JINKY; */
+}
+
+.page {
+    /* background-color: aqua; */
+}
