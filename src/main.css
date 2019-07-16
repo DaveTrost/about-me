@@ -29,12 +29,6 @@ header, main, .quiz-box, footer {
     padding: 10px;
     margin: auto;
 }
-.quiz-box {
-    background-color: #ECE159;
-    font-family: JINKY;
-    font-size: 400%;
-    text-align: center;
-}
 
 /* Set a background color behind the content */
 body {
@@ -51,6 +45,19 @@ header {
 footer {
     background-color: #DB2048;
 }
+
+/* Provide color and styling options for the quiz button */
+.quiz-box {
+    background-color: #ECE159;
+    /* font-family: JINKY; */
+    font-size: 400%;
+    /* text-align: center; */
+}
+.highlighted {
+    text-shadow: 2px 2px rgb(167, 165, 82);
+}
+
+
 
 /* set up floating classes */
 .float-right {

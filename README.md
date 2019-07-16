@@ -35,6 +35,8 @@
 
 The CSS isn't everything I want it to be. Depending on page size, the iframe video takes up too much or too little space
 Is there a way to add line breaks conditionally?? (like if the browser window is very wide)?
+The HTML cleanup made me remove the \<p\> tag from inside by button. Now the results area doesn't align with the quiz button.
+I want to get some new fonts for the quiz button and a new font for the article
 
 ### Javascript
 
