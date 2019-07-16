@@ -43,8 +43,8 @@ function startQuiz() {
     if(!userFirstName || !userLastName) return;
 
     // Deliver the quiz questions
-    const answer1 = prompt('Question 1:\nWhat year was I born?');
-    if(answer1 === '1980') {
+    const answer1 = prompt('Question 1:\nWas I born in the 1980\'s? (Y/N)');
+    if(isYes(answer1)) {
         correctAnswers++;
         passImageForQuestion1.classList.remove('hidden');
         failImageForQuestion1.classList.add('hidden');
@@ -53,8 +53,8 @@ function startQuiz() {
         failImageForQuestion1.classList.remove('hidden');
     }
 
-    const answer2 = prompt('Question 2:\nHow old is my son?');
-    if(answer2 === '7') {
+    const answer2 = prompt('Question 2:\nCan I throw a frisbee 400 feet? (Y/N)');
+    if(!isYes(answer2)) {
         correctAnswers++;
         passImageForQuestion2.classList.remove('hidden');
         failImageForQuestion2.classList.add('hidden');
@@ -63,8 +63,8 @@ function startQuiz() {
         failImageForQuestion2.classList.remove('hidden');
     }
 
-    const answer3 = prompt('Question 3:\nWhat is the best site for watching disc golf?');
-    if(answer3.toLowerCase() === 'youtube') {
+    const answer3 = prompt('Question 3:\nDo you think I am good at riding a BMX bike? (Y/N)');
+    if(!isYes(answer3)) {
         correctAnswers++;
         passImageForQuestion3.classList.remove('hidden');
         failImageForQuestion3.classList.add('hidden');
