@@ -38,6 +38,7 @@ Is there a way to add line breaks conditionally?? (like if the browser window is
 
 ### Javascript
 
+- setup tests
 - import things
 - reference needed DOM elements
 - initialization (setup, state variables)

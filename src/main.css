@@ -7,12 +7,12 @@
     font-family: 'JINKY';
     src: url('../assets/JINKY.ttf')  format('truetype');
 }
-section h1 {
+article h1 {
     font-family: GONGN;
     /* font-family: JINKY; */
-    font-size: 200%;
+    font-size: 222%;
 }
-section h2 {
+article h2 {
     font-family: GONGN;
     /* font-family: JINKY; */
     width: 100%;
@@ -60,6 +60,11 @@ footer {
     float: left;
 }
 
+/* Border details for iFrame elements */
+iFrame {
+    border: 0px;
+}
+
 /* adjust image sizes */
 .small-logo {
     height: 60px;
@@ -67,6 +72,14 @@ footer {
 }
 .logo-top {
     vertical-align: middle;
+}
+
+/* set classes to be adjusted by JS */
+.hidden {
+    display: none;
+}
+.results-mark {
+    width: 20%;
 }
 
 /* The text and images in the header need to be massaged to look good on a single line */
