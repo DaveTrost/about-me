@@ -98,3 +98,8 @@ footer {
 header, footer {
     font-family: 'Rock Salt', cursive;
 }
+
+/* set classes to be adjusted by JS */
+.hidden {
+    display: none;
+}

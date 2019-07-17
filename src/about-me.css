@@ -11,9 +11,6 @@
 }
 
 /* set classes to be adjusted by JS */
-.hidden {
-    display: none;
-}
 .results-mark {
     width: 20%;
 }
