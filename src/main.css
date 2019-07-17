@@ -4,8 +4,12 @@
     src: url('../assets/GONGN___.ttf')  format('truetype');
 }
 @font-face {
-    font-family: 'JINKY';
-    src: url('../assets/JINKY.ttf')  format('truetype');
+    font-family: 'Nova_Mono';
+    src: url('../assets/Nova_Mono/NovaMono-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'YesevaOne-Regular';
+    src: url('../assets/Yeseva_One/YesevaOne-Regular.ttf')  format('truetype');
 }
 article h1 {
     font-family: GONGN;
@@ -17,6 +21,10 @@ article h2 {
     /* font-family: JINKY; */
     width: 100%;
 }
+* {
+    font-family: 'YesevaOne-Regular';
+    /* font-family: 'Nova_Mono'; */
+}
 .caption {
     font-family: helvetica;
     font-size: 0.8em
@@ -25,6 +33,7 @@ article h2 {
 /* create a centered box for all tags in the body */
 header, main, .quiz-box, footer {
     width: 80%;
+    max-width: 60rem;
     border: 0px;
     padding: 10px;
     margin: auto;
