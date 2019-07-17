@@ -11,7 +11,7 @@ const replayButtonEle = document.getElementById('play-again');
 
 // Set states and initialize variables
 let attemptsRemaining = 4;
-let correctNumber = Math.ceil(Math.random() * 20);
+let correctNumber = Math.floor(Math.random() * 20) + 1;
 let gameWon = false;
 const tooLowMsg = 'That number is too low';
 const tooHighMsg = 'That number is too high';
