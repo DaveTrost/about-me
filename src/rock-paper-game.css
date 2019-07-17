@@ -1,0 +1,14 @@
+label {
+    cursor: pointer;
+}
+
+/* Fix issues with border going away and coming back (jumpiness) */
+img {
+    border: 3px transparent;
+}
+
+input:checked + img {
+    border: 3px solid steelblue;
+    box-shadow: 2px 3px 3px black;
+}
+
