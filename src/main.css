@@ -1,29 +1,35 @@
 /* Set up some cool fonts and massage the font sizing */
 @font-face {
-    font-family: 'GONGN';
-    src: url('../assets/GONGN___.ttf')  format('truetype');
-}
-@font-face {
-    font-family: 'Nova_Mono';
-    src: url('../assets/Nova_Mono/NovaMono-Regular.ttf')  format('truetype');
+    font-family: 'RockSalt-Regular';
+    src: url('../assets/Rock_Salt/RockSalt-Regular.ttf')  format('truetype');
 }
 @font-face {
     font-family: 'YesevaOne-Regular';
     src: url('../assets/Yeseva_One/YesevaOne-Regular.ttf')  format('truetype');
 }
+@font-face {
+    font-family: 'Montserrat-ExtraBoldItalic';
+    src: url('../assets/Montserrat/Montserrat-ExtraBoldItalic.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../assets/Montserrat/Montserrat-SemiBold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('../assets/Montserrat/Montserrat-Black.ttf')  format('truetype');
+}
 article h1 {
-    font-family: GONGN;
-    /* font-family: JINKY; */
+    font-family: 'Montserrat-SemiBold';
     font-size: 222%;
 }
 article h2 {
-    font-family: GONGN;
-    /* font-family: JINKY; */
+    font-family: 'Montserrat-SemiBold';
     width: 100%;
 }
-* {
-    font-family: 'YesevaOne-Regular';
-    /* font-family: 'Nova_Mono'; */
+article {
+    /* font-family: 'YesevaOne-Regular'; */
+    font-family: 'Montserrat-SemiBold';
 }
 .caption {
     font-family: helvetica;
@@ -53,6 +59,11 @@ header {
 }
 footer {
     background-color: #DB2048;
+}
+
+/* set classes to be adjusted by JS */
+.hidden {
+    display: none;
 }
 
 /* set up floating classes */
@@ -89,17 +100,16 @@ header {
     width: 7%;
 }
 
-/* Special formatting for the footer information */
+/* Special formatting for the header, footer and nav regions */
 footer {
     font-size: 100%;
 }
 
-/* Set the font family for the header and footer */
-header, footer {
-    font-family: 'Rock Salt', cursive;
+header {
+    font-family: 'RockSalt-Regular';    
 }
 
-/* set classes to be adjusted by JS */
-.hidden {
-    display: none;
+nav table {
+    width: 80%;
+    margin: auto;   
 }
