@@ -46,21 +46,6 @@ footer {
     background-color: #DB2048;
 }
 
-/* Provide color and styling options for the quiz button */
-.quiz-box {
-    background-color: #ECE159;
-    /* font-family: JINKY; */
-    font-size: 400%;
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.highlighted {
-    text-shadow: 2px 2px rgb(167, 165, 82);
-}
-
-
-
 /* set up floating classes */
 .float-right {
     float: right;
@@ -81,14 +66,6 @@ iFrame {
 }
 .logo-top {
     vertical-align: middle;
-}
-
-/* set classes to be adjusted by JS */
-.hidden {
-    display: none;
-}
-.results-mark {
-    width: 20%;
 }
 
 /* The text and images in the header need to be massaged to look good on a single line */
