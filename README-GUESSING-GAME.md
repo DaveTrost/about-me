@@ -55,5 +55,8 @@
 - low/high/win/lose images
 - apply hidden tags to win/lose images
 - full instructions
+- change main font colors to make better use of the palette
+- check contrast on the provided site
+- build a cool button
 
 ## commit 5

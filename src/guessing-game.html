@@ -35,11 +35,24 @@
             <section class="game-area">
                 <h2>Let's Play</h2>
                 <label>
-                    <input type="number" name="user-guess" id="user-guess">
-                    <br>Guess a number between 1 and 20
+                    Guess a number between 1 and 20<br>
+                    <div class="buttons-box">
+                        <input type="number" name="user-guess" id="user-guess">
+                        <button id="guess-button">
+                            Am I Right?
+                        </button>
+                    </div>
                 </label>
-                <p>Attempts Remaining = <span id=remaining>4</span></p>
-                <p id="status-message" class="hidden">Status = <span id=status></span></p>
+                <p>Attempts Remaining = <span id="remaining">4</span></p>
+                <p>Status: <span id="status"></span></p>
+                <label id="play-again-box" class="hidden">
+                    Do you want to play again?<br>
+                    <div class="buttons-box">
+                        <button id="play-again">
+                            Restart
+                        </button>
+                    </div>
+                </label>
             </section>
         </article>
     </main>
