@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dave's Alchemy Lab Challenge</title>
-    <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./rock-paper-game.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
     <header>
@@ -32,14 +32,24 @@
             <p>
                 Click on one of the left-side icons to throw. The computer will play randomly.
             </p>
+            <p>
+                This game has a betting feature which can be enabled or disabled using the checkbox on the right. 
+                When betting is enabled, both players will start with the same number of chips in their stack. 
+                Set your bet amount before throwing your rock/paper/scissors. 
+                The game will end when one of the players has run out of chips. 
+            </p>
         </section>
         <section>
             <hr>
+            <label class="float-right">
+                <input type="checkbox" name="betting-checkbox" id="betting-checkbox">
+                Enable betting 
+            </label>
             <h2>Let's Play!</h2>
             <p class="centered">
                 <label>
-                    <button class="user-button" id="throw-rock"></button>
                     <img class="rps-box button-image" src="../assets/rock.jpg" alt="rock">
+                    <button class="user-button" id="throw-rock"></button>
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
@@ -65,16 +75,25 @@
                 <span class="rps-box tie-game-text" id="tie-game-text">Tied, Throw Again</span>
                 <span class="rps-box computer-winner-text" id="computer-wins-text">I Win!</span>
             </p>
-            <br>
+            <p class="centered">
+                <span class="rps-box stack-heading" id="human-stack-message">Your Chips</span>
+                <span class="rps-box"></span>
+                <span class="rps-box stack-heading" id="computer-stack-message">My Chips</span>
+            </p>
+            <p class="centered">
+                <span class="rps-box stack-amount" id="human-stack-count"></span>
+                <span class="rps-box"></span>
+                <span class="rps-box stack-amount" id="computer-stack-count">0</span>
+            </p>
             <p class="centered">
                 <span class="rps-box tally-heading" id="human-wins-message">Your Wins</span>
                 <span class="rps-box tally-heading" id="tie-games-message">Ties</span>
                 <span class="rps-box tally-heading" id="computer-wins-message">My Wins</span>
             </p>
             <p class="centered">
-                <span class="rps-box" id="human-wins-counter"></span>
-                <span class="rps-box" id="tie-games-counter"></span>
-                <span class="rps-box" id="computer-wins-counter"></span>
+                <span class="rps-box tally-amount" id="human-wins-counter"></span>
+                <span class="rps-box tally-amount" id="tie-games-counter"></span>
+                <span class="rps-box tally-amount" id="computer-wins-counter"></span>
             </p>
         </section>
     </main>

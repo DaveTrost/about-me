@@ -46,10 +46,6 @@
 
 ## commit 5
 
-## Gripes
-
-- the user's last play is not sufficiently clear. Maybe leave the border there until the next choice is made??
-
 ## HTML and CSS with betting
 
 - add bet amount area
@@ -63,3 +59,8 @@
 - limit bet amount
 - stop game if either player runs out of money
 - add and subtract money from the "Stack"s
+
+## Parking Lot
+
+- the user's last play is not sufficiently clear. Try leaving a muted border there until the next choice is made.
+- the play area is still too large. Move the you win / i win messages

@@ -17,9 +17,28 @@ label {
     display: inline-block;
 }
 
+.stack-heading {
+    color: red;
+    font-family: 'Montserrat-ExtraBoldItalic';
+    border-bottom: 1px solid red;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.stack-amount {
+    color: red;
+    font-family: 'Montserrat-ExtraBoldItalic';
+    font-size: 1.2em;
+}
+
 .tally-heading {
-    border-bottom: 1px solid #000;
-    padding-bottom: 15px;
+    font-family: 'Montserrat-Regular';
+    border-bottom: 0.5px solid #000;
+    padding-bottom: 5px;
+}
+
+.tally-amount {
+    font-family: 'Montserrat-Regular';
 }
 
 .user-winner-text {

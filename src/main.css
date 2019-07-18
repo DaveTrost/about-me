@@ -1,4 +1,3 @@
-/* Set up some cool fonts and massage the font sizing */
 @font-face {
     font-family: 'RockSalt-Regular';
     src: url('../assets/Rock_Salt/RockSalt-Regular.ttf')  format('truetype');
@@ -6,6 +5,10 @@
 @font-face {
     font-family: 'YesevaOne-Regular';
     src: url('../assets/Yeseva_One/YesevaOne-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../assets/Montserrat/Montserrat-Regular.ttf')  format('truetype');
 }
 @font-face {
     font-family: 'Montserrat-ExtraBoldItalic';
@@ -19,6 +22,7 @@
     font-family: 'Montserrat-Black';
     src: url('../assets/Montserrat/Montserrat-Black.ttf')  format('truetype');
 }
+
 h1 {
     font-family: 'Montserrat-SemiBold';
     font-size: 222%;
@@ -113,6 +117,7 @@ header {
 }
 
 nav table {
+    font-size: 0.9em;
     width: 100%;
     margin: auto;   
 }
