@@ -35,6 +35,11 @@ label {
     border-radius: 20px;
 }
 
+.tie-game-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.2em;
+}
+
 .user-button {
     display: none;
 }
@@ -44,30 +49,34 @@ label {
 }
 
 .user-button:hover + img {
-    opacity: 1;
+    opacity: 1.0;
 }
 
 .user-button:active + img, .user-button-chosen {
     border: 10px solid yellow;
-    opacity: 1;
+    opacity: 1.0;
     box-shadow: 2px 3px 3px black;
 }
 
 .computer-baseline {
-    opacity: 0;
-    transition: transform 300ms ease-in;
+    opacity: 0.0;
+}
+
+.computer-new-game {
+    opacity: 0.5;
 }
 
 .computer-spin:hover, .computer-spin {
-    opacity: 1;
-    transform: rotateX(720deg);
+    opacity: 1.0;
+    transition: transform 6000ms ease-in-out;
+    transform: rotateX(3600deg);
 }
 
-.computer-thrown:active, .computer-thrown {
-    opacity: 1;
+/* .computer-thrown:active, .computer-thrown {
+    opacity: 1.0;
     border: 10px solid red;
     box-shadow: 2px 3px 3px black;
-}
+} */
 
 .results-table {
     width: 100%;

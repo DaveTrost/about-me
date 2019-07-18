@@ -22,8 +22,8 @@
 
 ## Javascript 01
 
-- enable computerized throw ... cycle active style across elements and then stop by applying selected style
-- click on any user-side icon to enable computer's throw
+- enable computerized throw ... cycle active style across elements and then stop by applying selected style ... DAMN BUT THIS WAS NOT EASY!!!
+- click on any user-side icon to enable computer's throw ... AND THIS DIDN'T PAN OUT AT ALL!!!
 
 ## TDD
 

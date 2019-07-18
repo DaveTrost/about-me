@@ -38,34 +38,32 @@
             <h2>Let's Play!</h2>
             <p class="centered">
                 <label>
-                    <button class="user-button" name="throw" value="rock"></button>
+                    <button class="user-button" id="throw-rock"></button>
                     <img class="rps-box button-image" src="../assets/rock.jpg" alt="rock">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
-                <!-- <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/rock.jpg" alt="rock"> -->
             </p>
             <p class="centered">
                 <label>
-                    <button class="user-button"  name="throw" value="paper"></button>
+                    <button class="user-button"  id="throw-paper"></button>
                     <img class="rps-box button-image" src="../assets/paper.jpg" alt="paper">
                 </label>
                 <img class="rps-box" src="../assets/versus.png" alt="">
-                <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/rock.jpg" alt="image of the computer's throw">
+                <img class="rps-box computer-baseline computer-spin computer-thrown" id="computer-throw" src="../assets/rock.jpg" alt="image of the computer's throw">
             </p>
             <p class="centered">
                 <label>
-                    <button class="user-button"  name="throw" value="scissors"></button>
+                    <button class="user-button"  id="throw-scissors"></button>
                     <img class="rps-box button-image" src="../assets/scissors.jpg" alt="scissors">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
-                <!-- <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/scissors.jpg" alt="scissors"> -->
             </p>
             <p class="centered">
-                <span class="rps-box user-winner-text" id="human-wins-message">You Win!</span>
-                <span class="rps-box invisible"></span>
-                <span class="rps-box computer-winner-text" id="computer-wins-message">I Win!</span>
+                <span class="rps-box user-winner-text" id="human-wins-text">You Win!</span>
+                <span class="rps-box tie-game-text" id="tie-game-text">Tied, Throw Again</span>
+                <span class="rps-box computer-winner-text" id="computer-wins-text">I Win!</span>
             </p>
             <br>
             <p class="centered">
@@ -85,6 +83,6 @@
             created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost"> my Git Hub</a>
         </p>
     </footer>
-    <script src="./guessing-game.js" type="module"></script>
+    <script src="./rock-paper-game.js" type="module"></script>
 </body>
 </html>
