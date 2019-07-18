@@ -38,25 +38,23 @@ computerTallyEle.textContent = computerTally;
 resetGame();
 
 rockButtonEle.addEventListener('click', () => {
-    takeBets();
-    rockButtonEle.classList.add('user-button-chosen');
-    userThrown = ROCK;
-    computerMakeThrow();
+    playGame(ROCK, rockButtonEle);
 });
 paperButtonEle.addEventListener('click', () => {
-    takeBets();
-    paperButtonEle.classList.add('user-button-chosen');
-    userThrown = PAPER;
-    computerMakeThrow();
+    playGame(PAPER, paperButtonEle);
 });
 scissorsButtonEle.addEventListener('click', () => {
-    takeBets();
-    scissorsButtonEle.classList.add('user-button-chosen');
-    userThrown = SCISSORS;
-    computerMakeThrow();
+    playGame(SCISSORS, scissorsButtonEle);
 });
 computerThrowEle.addEventListener('transitionend', () => endGame());
 bettingCheckboxEle.addEventListener('click', () => setupBetting());
+
+function playGame(userThrow, throwButton) {
+    takeBets();
+    throwButton.classList.add('user-button-chosen');
+    userThrown = userThrow;
+    computerMakeThrow();
+}
 
 function computerMakeThrow() {
     rockButtonEle.disabled = true;
