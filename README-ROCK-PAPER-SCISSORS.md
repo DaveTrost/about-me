@@ -46,6 +46,10 @@
 
 ## commit 5
 
+## Gripes
+
+- the user's last play is not sufficiently clear. Maybe leave the border there until the next choice is made??
+
 ## HTML and CSS with betting
 
 - add bet amount area

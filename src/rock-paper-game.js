@@ -55,7 +55,6 @@ function computerMakeThrow() {
     computerThrowEle.classList.remove('computer-spin');
     computerThrowEle.classList.add('computer-spin');
     computerThrown = getThrow();
-    console.log(computerThrown);
     
     setTimeout(() => setImg(ROCK), 0);
     setTimeout(() => setImg(PAPER), 600);
