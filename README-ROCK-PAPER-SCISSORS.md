@@ -15,8 +15,8 @@
 - make 2 "vs" images invisible
 - style for active
 - style for selected
-- 2x3 table for winner texts, win tally headers and tallies
-- directions
+- continue the array for winner texts, win tally headers and tallies
+- add directions
 
 ## commit 2
 

@@ -19,15 +19,15 @@
     font-family: 'Montserrat-Black';
     src: url('../assets/Montserrat/Montserrat-Black.ttf')  format('truetype');
 }
-article h1 {
+h1 {
     font-family: 'Montserrat-SemiBold';
     font-size: 222%;
 }
-article h2 {
+article h2, section h2 {
     font-family: 'Montserrat-SemiBold';
     width: 100%;
 }
-article {
+article, section {
     /* font-family: 'YesevaOne-Regular'; */
     font-family: 'Montserrat-SemiBold';
 }
@@ -64,6 +64,9 @@ footer {
 /* set classes to be adjusted by JS */
 .hidden {
     display: none;
+}
+.invisible {
+    visibility: hidden;
 }
 
 /* set up floating classes */

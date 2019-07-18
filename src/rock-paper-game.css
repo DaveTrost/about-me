@@ -2,13 +2,76 @@ label {
     cursor: pointer;
 }
 
-/* Fix issues with border going away and coming back (jumpiness) */
-img {
-    border: 3px transparent;
+.centered {
+    margin: auto;
+    text-align: center;
 }
 
-input:checked + img {
-    border: 3px solid steelblue;
+.rps-box {
+    width: 15%;
+    border: 10px solid transparent;
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.tally-heading {
+    border-bottom: 1px solid #000;
+    padding-bottom: 15px;
+}
+
+.user-winner-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    border: 15px double yellow;
+    border-radius: 20px;
+}
+
+.computer-winner-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    border: 15px double red;
+    border-radius: 20px;
+}
+
+.user-button {
+    display: none;
+}
+
+.user-button + img {
+    opacity: 0.5;
+}
+
+.user-button:hover + img {
+    opacity: 1;
+}
+
+.user-button:active + img, .user-button-chosen {
+    border: 10px solid yellow;
+    opacity: 1;
     box-shadow: 2px 3px 3px black;
 }
 
+.computer-baseline {
+    opacity: 0;
+    transition: transform 300ms ease-in;
+}
+
+.computer-spin:hover, .computer-spin {
+    opacity: 1;
+    transform: rotateX(720deg);
+}
+
+.computer-thrown:active, .computer-thrown {
+    opacity: 1;
+    border: 10px solid red;
+    box-shadow: 2px 3px 3px black;
+}
+
+.results-table {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+   
+}

@@ -30,9 +30,55 @@
         <section>
             <h2>Game Play</h2>
             <p>
-                details here
+                Click on one of the left-side icons to throw. The computer will play randomly.
             </p>
-        </section>        
+        </section>
+        <section>
+            <hr>
+            <h2>Let's Play!</h2>
+            <p class="centered">
+                <label>
+                    <button class="user-button" name="throw" value="rock"></button>
+                    <img class="rps-box button-image" src="../assets/rock.jpg" alt="rock">
+                </label>
+                <img class="rps-box invisible" src="" alt="">
+                <img class="rps-box invisible" src="" alt="">
+                <!-- <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/rock.jpg" alt="rock"> -->
+            </p>
+            <p class="centered">
+                <label>
+                    <button class="user-button"  name="throw" value="paper"></button>
+                    <img class="rps-box button-image" src="../assets/paper.jpg" alt="paper">
+                </label>
+                <img class="rps-box" src="../assets/versus.png" alt="">
+                <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/rock.jpg" alt="image of the computer's throw">
+            </p>
+            <p class="centered">
+                <label>
+                    <button class="user-button"  name="throw" value="scissors"></button>
+                    <img class="rps-box button-image" src="../assets/scissors.jpg" alt="scissors">
+                </label>
+                <img class="rps-box invisible" src="" alt="">
+                <img class="rps-box invisible" src="" alt="">
+                <!-- <img class="rps-box computer-baseline computer-spin computer-thrown" src="../assets/scissors.jpg" alt="scissors"> -->
+            </p>
+            <p class="centered">
+                <span class="rps-box user-winner-text" id="human-wins-message">You Win!</span>
+                <span class="rps-box invisible"></span>
+                <span class="rps-box computer-winner-text" id="computer-wins-message">I Win!</span>
+            </p>
+            <br>
+            <p class="centered">
+                <span class="rps-box tally-heading" id="human-wins-message">Your Wins</span>
+                <span class="rps-box invisible"></span>
+                <span class="rps-box tally-heading" id="computer-wins-message">My Wins</span>
+            </p>
+            <p class="centered">
+                <span class="rps-box" id="human-wins-counter">0</span>
+                <span class="rps-box invisible"></span>
+                <span class="rps-box" id="computer-wins-counter">0</span>
+            </p>
+        </section>
     </main>
     <footer>
         <p>
