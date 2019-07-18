@@ -1,6 +1,13 @@
 label {
     cursor: pointer;
 }
+#bet-input {
+    cursor: unset;
+}
+
+#bet-amount {
+    width: 8%;
+}
 
 .centered {
     margin: auto;

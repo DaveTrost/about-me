@@ -56,9 +56,10 @@
 
 ## JavaScript 04
 
-- limit bet amount
-- stop game if either player runs out of money
+- turn on/off betting widgets
 - add and subtract money from the "Stack"s
+- stop game if either player runs out of money
+- limit bet amount
 
 ## Parking Lot
 
