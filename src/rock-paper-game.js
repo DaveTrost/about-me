@@ -7,12 +7,21 @@ const computerThrowEle = document.getElementById('computer-throw');
 const userWinsTextEle = document.getElementById('human-wins-text');
 const tieGameTextEle = document.getElementById('tie-game-text');
 const computerWinsTextEle = document.getElementById('computer-wins-text');
+const userTallyEle = document.getElementById('human-wins-counter');
+const tiesTallyEle = document.getElementById('tie-games-counter');
+const computerTallyEle = document.getElementById('computer-wins-counter');
 let userThrown;
 let computerThrown;
+let userTally = 0;
+let tiesTally = 0;
+let computerTally = 0;
 
 userWinsTextEle.classList.add('invisible');
 tieGameTextEle.classList.add('invisible'); 
 computerWinsTextEle.classList.add('invisible');
+userTallyEle.textContent = userTally;
+tiesTallyEle.textContent = tiesTally;
+computerTallyEle.textContent = computerTally;
 resetGame();
 
 rockButtonEle.addEventListener('click', () => {
@@ -49,25 +58,28 @@ function computerMakeThrow() {
     console.log(computerThrown);
     
     setTimeout(() => setImg(ROCK), 0);
-    setTimeout(() => setImg(PAPER), 1500);
-    setTimeout(() => setImg(SCISSORS), 3000);
-    setTimeout(() => setImg(computerThrown), 4500);
+    setTimeout(() => setImg(PAPER), 600);
+    setTimeout(() => setImg(SCISSORS), 1200);
+    setTimeout(() => setImg(computerThrown), 1800);
 }
 
 function endGame() {
     switch(getWinner(userThrown, computerThrown)) {
         case TIE:
             tieGameTextEle.classList.remove('invisible');
+            tiesTallyEle.textContent = ++tiesTally;
             break;
         case USER_WINS:
             userWinsTextEle.classList.remove('invisible');
+            userTallyEle.textContent = ++userTally;
             break;
         case COMPUTER_WINS:
             computerWinsTextEle.classList.remove('invisible');
+            computerTallyEle.textContent = ++computerTally;
             break;
     }
     computerThrowEle.classList.add('computer-new-game');
-    setTimeout(() => resetGame(), 1500);
+    setTimeout(() => resetGame(), 1000);
 }
 
 function resetGame() {

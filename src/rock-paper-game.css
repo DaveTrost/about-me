@@ -9,6 +9,7 @@ label {
 
 .rps-box {
     width: 15%;
+    max-width: 100px;
     border: 10px solid transparent;
     margin: 5px;
     margin-left: 20px;
@@ -68,8 +69,8 @@ label {
 
 .computer-spin:hover, .computer-spin {
     opacity: 1.0;
-    transition: transform 6000ms ease-in-out;
-    transform: rotateX(3600deg);
+    transition: transform 2400ms ease-in-out;
+    transform: rotateX(1800deg);
 }
 
 /* .computer-thrown:active, .computer-thrown {
