@@ -38,22 +38,29 @@ computerTallyEle.textContent = computerTally;
 resetGame();
 
 rockButtonEle.addEventListener('click', () => {
-    playGame(ROCK, rockButtonEle);
+    userThrown = ROCK;
+    startGameAndWaitForAnimation();
 });
 paperButtonEle.addEventListener('click', () => {
-    playGame(PAPER, paperButtonEle);
+    userThrown = PAPER;
+    startGameAndWaitForAnimation();
 });
 scissorsButtonEle.addEventListener('click', () => {
-    playGame(SCISSORS, scissorsButtonEle);
+    userThrown = SCISSORS;
+    startGameAndWaitForAnimation();
 });
-computerThrowEle.addEventListener('transitionend', () => endGame());
 bettingCheckboxEle.addEventListener('click', () => setupBetting());
+computerThrowEle.addEventListener('transitionend', () => endGame());
 
-function playGame(userThrow, throwButton) {
+function startGameAndWaitForAnimation() {
     takeBets();
-    throwButton.classList.add('user-button-chosen');
-    userThrown = userThrow;
+    displayUserChoice();
     computerMakeThrow();
+}
+
+function displayUserChoice() {
+    const throwButton = (userThrown === ROCK ? rockButtonEle : (userThrown === PAPER ? paperButtonEle : scissorsButtonEle));
+    throwButton.classList.add('user-button-chosen');
 }
 
 function computerMakeThrow() {
