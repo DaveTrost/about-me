@@ -35,7 +35,10 @@ computerWinsTextEle.classList.add('invisible');
 userTallyEle.textContent = userTally;
 tiesTallyEle.textContent = tiesTally;
 computerTallyEle.textContent = computerTally;
-resetGame();
+setupGame();
+updateBetting();
+
+bettingCheckboxEle.addEventListener('click', () => updateBetting());
 
 rockButtonEle.addEventListener('click', () => {
     userThrown = ROCK;
@@ -49,13 +52,18 @@ scissorsButtonEle.addEventListener('click', () => {
     userThrown = SCISSORS;
     startGameAndWaitForAnimation();
 });
-bettingCheckboxEle.addEventListener('click', () => setupBetting());
-computerThrowEle.addEventListener('transitionend', () => endGame());
-
 function startGameAndWaitForAnimation() {
     takeBets();
     displayUserChoice();
     computerMakeThrow();
+}
+
+computerThrowEle.addEventListener('transitionend', () => finishGameAfterAnimation());
+function finishGameAfterAnimation() {
+    const winner = getWinner(userThrown, computerThrown);
+    updateResults(winner);
+    updateBetting();
+    setTimeout(() => resetGame(), 1000);
 }
 
 function displayUserChoice() {
@@ -83,8 +91,8 @@ function computerMakeThrow() {
     setTimeout(() => setImg(computerThrown), 1800);
 }
 
-function endGame() {
-    switch(getWinner(userThrown, computerThrown)) {
+function updateResults(winner) {
+    switch(winner) {
         case TIE:
             tieGameTextEle.classList.remove('invisible');
             tiesTallyEle.textContent = ++tiesTally;
@@ -102,13 +110,14 @@ function endGame() {
             computerChips += betAmount;
             break;
     }
-    computerThrowEle.classList.add('computer-new-game');
-    setupBetting();
-    setTimeout(() => resetGame(), 1000);
 }
 
 function resetGame() {
-    setupBetting();
+    computerThrowEle.classList.add('computer-new-game');
+    setupGame();
+}
+
+function setupGame() {
     if(humanChips <= 0) {
         rockButtonEle.disabled = true;
         paperButtonEle.disabled = true;
@@ -143,7 +152,7 @@ function resetGame() {
     computerThrowEle.classList.remove('computer-spin');
 }
 
-function setupBetting() {
+function updateBetting() {
     if(bettingCheckboxEle.checked) {
         bettingBoxEle.classList.remove('hidden');
         humanStackHeaderEle.classList.remove('hidden');
