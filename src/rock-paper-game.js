@@ -35,28 +35,41 @@ computerWinsTextEle.classList.add('invisible');
 userTallyEle.textContent = userTally;
 tiesTallyEle.textContent = tiesTally;
 computerTallyEle.textContent = computerTally;
-resetGame();
+setupGame();
+updateBetting();
+
+bettingCheckboxEle.addEventListener('click', () => updateBetting());
 
 rockButtonEle.addEventListener('click', () => {
-    takeBets();
-    rockButtonEle.classList.add('user-button-chosen');
     userThrown = ROCK;
-    computerMakeThrow();
+    startGameAndWaitForAnimation();
 });
 paperButtonEle.addEventListener('click', () => {
-    takeBets();
-    paperButtonEle.classList.add('user-button-chosen');
     userThrown = PAPER;
-    computerMakeThrow();
+    startGameAndWaitForAnimation();
 });
 scissorsButtonEle.addEventListener('click', () => {
-    takeBets();
-    scissorsButtonEle.classList.add('user-button-chosen');
     userThrown = SCISSORS;
-    computerMakeThrow();
+    startGameAndWaitForAnimation();
 });
-computerThrowEle.addEventListener('transitionend', () => endGame());
-bettingCheckboxEle.addEventListener('click', () => setupBetting());
+function startGameAndWaitForAnimation() {
+    takeBets();
+    displayUserChoice();
+    computerMakeThrow();
+}
+
+computerThrowEle.addEventListener('transitionend', () => finishGameAfterAnimation());
+function finishGameAfterAnimation() {
+    const winner = getWinner(userThrown, computerThrown);
+    updateResults(winner);
+    updateBetting();
+    setTimeout(() => resetGame(), 1000);
+}
+
+function displayUserChoice() {
+    const throwButton = (userThrown === ROCK ? rockButtonEle : (userThrown === PAPER ? paperButtonEle : scissorsButtonEle));
+    throwButton.classList.add('user-button-chosen');
+}
 
 function computerMakeThrow() {
     rockButtonEle.disabled = true;
@@ -78,8 +91,8 @@ function computerMakeThrow() {
     setTimeout(() => setImg(computerThrown), 1800);
 }
 
-function endGame() {
-    switch(getWinner(userThrown, computerThrown)) {
+function updateResults(winner) {
+    switch(winner) {
         case TIE:
             tieGameTextEle.classList.remove('invisible');
             tiesTallyEle.textContent = ++tiesTally;
@@ -97,13 +110,14 @@ function endGame() {
             computerChips += betAmount;
             break;
     }
-    computerThrowEle.classList.add('computer-new-game');
-    setupBetting();
-    setTimeout(() => resetGame(), 1000);
 }
 
 function resetGame() {
-    setupBetting();
+    computerThrowEle.classList.add('computer-new-game');
+    setupGame();
+}
+
+function setupGame() {
     if(humanChips <= 0) {
         rockButtonEle.disabled = true;
         paperButtonEle.disabled = true;
@@ -138,7 +152,7 @@ function resetGame() {
     computerThrowEle.classList.remove('computer-spin');
 }
 
-function setupBetting() {
+function updateBetting() {
     if(bettingCheckboxEle.checked) {
         bettingBoxEle.classList.remove('hidden');
         humanStackHeaderEle.classList.remove('hidden');
