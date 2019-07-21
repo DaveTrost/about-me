@@ -1,21 +1,35 @@
 /* Set up some cool fonts and massage the font sizing */
 @font-face {
-    font-family: 'GONGN';
-    src: url('../assets/GONGN___.ttf')  format('truetype');
+    font-family: 'RockSalt-Regular';
+    src: url('../assets/Rock_Salt/RockSalt-Regular.ttf')  format('truetype');
 }
 @font-face {
-    font-family: 'JINKY';
-    src: url('../assets/JINKY.ttf')  format('truetype');
+    font-family: 'YesevaOne-Regular';
+    src: url('../assets/Yeseva_One/YesevaOne-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-ExtraBoldItalic';
+    src: url('../assets/Montserrat/Montserrat-ExtraBoldItalic.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../assets/Montserrat/Montserrat-SemiBold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat-Black';
+    src: url('../assets/Montserrat/Montserrat-Black.ttf')  format('truetype');
 }
 article h1 {
-    font-family: GONGN;
-    /* font-family: JINKY; */
+    font-family: 'Montserrat-SemiBold';
     font-size: 222%;
 }
 article h2 {
-    font-family: GONGN;
-    /* font-family: JINKY; */
+    font-family: 'Montserrat-SemiBold';
     width: 100%;
+}
+article {
+    /* font-family: 'YesevaOne-Regular'; */
+    font-family: 'Montserrat-SemiBold';
 }
 .caption {
     font-family: helvetica;
@@ -25,6 +39,7 @@ article h2 {
 /* create a centered box for all tags in the body */
 header, main, .quiz-box, footer {
     width: 80%;
+    max-width: 60rem;
     border: 0px;
     padding: 10px;
     margin: auto;
@@ -46,20 +61,10 @@ footer {
     background-color: #DB2048;
 }
 
-/* Provide color and styling options for the quiz button */
-.quiz-box {
-    background-color: #ECE159;
-    /* font-family: JINKY; */
-    font-size: 400%;
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+/* set classes to be adjusted by JS */
+.hidden {
+    display: none;
 }
-.highlighted {
-    text-shadow: 2px 2px rgb(167, 165, 82);
-}
-
-
 
 /* set up floating classes */
 .float-right {
@@ -83,14 +88,6 @@ iFrame {
     vertical-align: middle;
 }
 
-/* set classes to be adjusted by JS */
-.hidden {
-    display: none;
-}
-.results-mark {
-    width: 20%;
-}
-
 /* The text and images in the header need to be massaged to look good on a single line */
 header {
     font-size: 130%;
@@ -103,12 +100,16 @@ header {
     width: 7%;
 }
 
-/* Special formatting for the footer information */
+/* Special formatting for the header, footer and nav regions */
 footer {
     font-size: 100%;
 }
 
-/* Set the font family for the header and footer */
-header, footer {
-    font-family: 'Rock Salt', cursive;
+header {
+    font-family: 'RockSalt-Regular';    
+}
+
+nav table {
+    width: 80%;
+    margin: auto;   
 }
