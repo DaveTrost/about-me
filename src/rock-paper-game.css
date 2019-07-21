@@ -1,0 +1,113 @@
+label {
+    cursor: pointer;
+}
+#bet-input {
+    cursor: unset;
+}
+
+#bet-amount {
+    width: 8%;
+}
+
+.centered {
+    margin: auto;
+    text-align: center;
+}
+
+.rps-box {
+    width: 15%;
+    max-width: 100px;
+    border: 10px solid transparent;
+    margin: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.stack-heading {
+    color: red;
+    font-family: 'Montserrat-ExtraBoldItalic';
+    border-bottom: 1px solid red;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.stack-amount {
+    color: red;
+    font-family: 'Montserrat-ExtraBoldItalic';
+    font-size: 1.2em;
+}
+
+.tally-heading {
+    font-family: 'Montserrat-Regular';
+    border-bottom: 0.5px solid #000;
+    padding-bottom: 5px;
+}
+
+.tally-amount {
+    font-family: 'Montserrat-Regular';
+}
+
+.user-winner-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    border: 15px double yellow;
+    border-radius: 20px;
+}
+
+.computer-winner-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    border: 15px double red;
+    border-radius: 20px;
+}
+
+.tie-game-text {
+    font-family: 'Montserrat-Black';
+    font-size: 1.2em;
+}
+
+.user-button {
+    display: none;
+}
+
+.user-button + img {
+    opacity: 0.5;
+}
+
+.user-button:hover + img {
+    opacity: 1.0;
+}
+
+.user-button:active + img, .user-button-chosen + img {
+    border: 10px solid yellow;
+    opacity: 1.0;
+    box-shadow: 2px 3px 3px black;
+}
+
+.computer-baseline {
+    opacity: 0.0;
+}
+
+.computer-new-game {
+    opacity: 0.5;
+}
+
+.computer-spin:hover, .computer-spin {
+    opacity: 1.0;
+    transition: transform 2400ms ease-in-out;
+    transform: rotateX(1800deg);
+}
+
+/* .computer-thrown:active, .computer-thrown {
+    opacity: 1.0;
+    border: 10px solid red;
+    box-shadow: 2px 3px 3px black;
+} */
+
+.results-table {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+   
+}
