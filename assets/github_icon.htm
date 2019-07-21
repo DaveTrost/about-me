@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      
+        Code Review as a Service on GitHub
+          | PullRequest Blog
+          
+      
+    </title>
+    <meta name="description"
+          content="Read how developers are now getting code quality feedback from professional code reviewers as a part of their GitHub workflow."/>
+    <meta name="robots" content="index, follow, archive"><link rel="canonical" href="https://www.pullrequest.com/blog/github-code-review-service/"/>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.pullrequest.com/blog/github-code-review-service/"
+      },
+      "headline": "Code Review as a Service on GitHub",
+      "genre": "Engineering,",
+      "url": "https://www.pullrequest.com/blog/github-code-review-service/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PullRequest",
+        "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.pullrequest.com/images/logos/pullrequest-logo-with-google-amp-specs.png",
+              "height": "60",
+              "width": "200"
+            }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Brennan Angel"
+      },
+        "image": "https://www.pullrequest.com/blog/github-code-review-service/images/github-logo_hub2899c31b6ca7aed8d6a218f0e752fe4_46649_1200x1200_fill_box_center_2.png",
+      "datePublished": "2017-12-11 10:00:00 -0500 -0500",
+      "dateModified": "2018-11-09 14:47:58 -0600 -0600",
+      "description": "Read how developers are now getting code quality feedback from professional code reviewers as a part of their GitHub workflow.",
+      "wordcount": "622",
+      "timeRequired": "3"
+    }
+</script>
+<meta name="twitter:site" content="pullrequestcom"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@pullrequestcom"/>
+    <meta name="twitter:title" content="Code Review as a Service on GitHub"/>
+    <meta name="twitter:description" content="Read how developers are now getting code quality feedback from professional code reviewers as a part of their GitHub workflow."/>
+
+    <meta name="twitter:image" content="https://www.pullrequest.com/blog/github-code-review-service/images/github-logo_hub2899c31b6ca7aed8d6a218f0e752fe4_46649_1200x1200_fill_box_center_2.png"/><meta property="og:site_name" content="PullRequest"/><meta property="fb:app_id" content="2106461146276546"/><meta property="og:url" content="https://www.pullrequest.com/blog/github-code-review-service/"/><meta property="og:image" content="https://www.pullrequest.com/blog/github-code-review-service/images/github-logo_hub2899c31b6ca7aed8d6a218f0e752fe4_46649_1200x1200_fill_box_center_2.png"/><meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="1200"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Code Review as a Service on GitHub"/>
+    <meta property="og:description" content="Read how developers are now getting code quality feedback from professional code reviewers as a part of their GitHub workflow."/><meta property="article:publisher" content="https://www.facebook.com/pullrequestinc"/><meta property="article:author" content="Brennan Angel"/>
+    <meta property="article:published_time" content="2017-12-11 10:00:00 -0500 -0500"/>
+    <meta property="article:modified_time" content="2017-12-11 10:00:00 -0500 -0500"/>
+    <meta property="article:section" content="blog"/><meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320"><link rel='stylesheet' href="https://www.pullrequest.com/css/app.css?da81dbc12fa6d2fc6c3af1f3a3963bcc" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.pullrequest.com/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.pullrequest.com/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.pullrequest.com/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.pullrequest.com/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="https://www.pullrequest.com/images/favicon/safari-pinned-tab.svg" color="#28557A">
+<meta name="msapplication-TileColor" content="#28557a">
+<meta name="theme-color" content="#28557a">
+</head>
+<body class="blog   production">
+<header>
+  <nav id="navbar" class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="navbar-brand float-left navbar-logo" href="https://www.pullrequest.com/">
+      <img
+        src="https://www.pullrequest.com/images/pullrequest-logo.svg"
+        height="40"
+        alt="PullRequest Logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"><i class="fal fa-bars"></i></span>
+    </button>
+    <div
+      class="navbar-links collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a
+            data-toggle="dropdown"
+            id="dropdown-solutions"
+            class="nav-link text-nowrap"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Product <i class="fas fa-angle-down"></i>
+          </a>
+          <div
+            class="dropdown-menu"
+            id="productMenu"
+            aria-labelledby="dropdown-solutions"
+          >
+            <a class="dropdown-item" href="https://www.pullrequest.com/pricing/">Pricing</a>
+            <a class="dropdown-item" href="https://www.pullrequest.com/technical-screening/"
+              >Technical Screening</a
+            >
+            <a class="dropdown-item" href="https://www.pullrequest.com/customer-stories/"
+              >Customer Stories
+            </a>
+            <a class="dropdown-item" href="https://www.pullrequest.com/product/faq/">FAQ</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            data-toggle="dropdown"
+            id="dropdown-company"
+            class="nav-link text-nowrap"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Company <i class="fas fa-angle-down"></i>
+          </a>
+          <div
+            class="dropdown-menu"
+            id="companyMenu"
+            aria-labelledby="dropdown-company"
+          >
+            <a class="dropdown-item" href="https://www.pullrequest.com/about/">About Us</a>
+            <a class="dropdown-item" href="https://www.pullrequest.com/press/">Press</a>
+            <a class="dropdown-item" href="https://www.pullrequest.com/careers/">Careers</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.pullrequest.com/reviewers/become-a-reviewer/">
+            Become A Reviewer
+          </a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://www.pullrequest.com/blog/"> Blog </a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://app.pullrequest.com/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://app.pullrequest.com/signup" class="btn btn-blue">
+            Sign Up
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+<main aria-role="main">
+  <div class="blog-header">
+  <div class="hero jumbotron">
+  <h1 class="title">
+    Code Review as a Service on GitHub
+  </h1>
+  
+  
+</div>
+
+    <div class="nav-header container d-none d-md-block">
+        
+        <ul class="nav border-bottom">
+            <li class="nav-item mb-3 mr-3"><a class="blog-cat" href="https://www.pullrequest.com/blog/">All</a></li>
+            
+            <li class="nav-item mb-3 mr-3">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/code-review/">Code Review</a></li>
+            
+            <li class="nav-item mb-3 mr-3">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/customer-stories/">Customer Stories</a></li>
+            
+            <li class="nav-item mb-3 mr-3 active">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/engineering/">Engineering</a></li>
+            
+            <li class="nav-item mb-3 mr-3">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/product/">Product</a></li>
+            
+            <li class="nav-item mb-3 mr-3">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/satire/">Satire</a></li>
+            
+            <li class="nav-item mb-3 mr-3">
+                <a class="blog-cat" href="https://www.pullrequest.com/categories/tools/">Tools</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+  <div class="container blog-post">
+    <div class="row">
+      <div class="col-md-10 col-sm-12">
+        <div class="blog-links px-md-5">
+          
+          <span class="float-left"
+            ><a class="previous blog-link" href="https://www.pullrequest.com/blog/"
+              ><i class="far fa-arrow-left"></i> Back To Blog</a
+            ></span
+          >
+           
+          <span class="float-right"
+            ><a class="next blog-link" href="https://www.pullrequest.com/blog/3-ways-code-review-makes-your-dev-team-better/"
+              >Next <i class="far fa-arrow-right"></i></a
+          ></span>
+          
+        </div>
+        <div class="px-md-5 py-5">
+          <h1 class="card-title pb-3">Code Review as a Service on GitHub</h1>
+          <article class="mt-3"><p>Software development teams are now using PullRequest&rsquo;s code review as a service inside of GitHub. The new GitHub app from PullRequest allows developers to receive feedback from professional code reviewers as a part of their GitHub workflow. These software teams are using the paid code review to supplement, or in some cases, replace their peer code review process. This feedback helps them write cleaner code with fewer bugs.</p>
+
+<h2 id="how-to-get-a-code-review-in-github-from-pullrequest">How to get a code review in GitHub from PullRequest</h2>
+
+<h4 id="step-1-connect-a-github-repository">Step 1: Connect a GitHub Repository</h4>
+
+<p>You can simply add a repository to PullRequest by clicking GitHub in your dashboard. This will authorize PullRequest to access your GitHub account, install the PullRequest GitHub app, and allow you to select which repositories you would like to connect. Check our documentation for a walkthrough of <a href="https://docs.pullrequest.com/adding-github-repositories-to-pullrequest/">installing the PullRequest GitHub app</a> and connecting your repositories.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/install-github-pullrequest-app.png" alt="Connecting GitHub repositories to PullRequest"/>
+    <figcaption class="figure-caption text-muted">
+        Connecting GitHub repositories to PullRequest
+    </figcaption>
+</figure>
+
+
+<h4 id="step-2-request-code-review-for-a-github-pull-request">Step 2: Request code review for a GitHub pull request</h4>
+
+<p>You have three easy ways to request code review from PullRequest&rsquo;s vetted code reviewers: Automatic code review, manually requesting code review through a pull request title, or manually requesting code review through your PullRequest dashboard.</p>
+
+<h5 id="option-1-automatic-code-review">Option 1: Automatic Code Review</h5>
+
+<p>In your dashboard select &ldquo;Auto Review&rdquo; to automatically receive code review feedback on every pull request in the repository. As needed you can cancel an individual review by putting <code>[!pr]</code> in the pull request&rsquo;s title or canceling in the dashboard.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/automatic-code-review-selection.png" alt="Selecting automatic code review or manual code review"/>
+    <figcaption class="figure-caption text-muted">
+        Selecting automatic code review or manual code review
+    </figcaption>
+</figure>
+
+
+<h5 id="option-2-request-code-review-in-a-github-pull-request-s-title">Option 2: Request code review in a GitHub pull request&rsquo;s title</h5>
+
+<p>In GitHub you can request code review by adding [pr] to the title of a pull request.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/code-review-request-using-github-pull-request-title.png" alt="Requesting code review by adding [pr] to a GitHub pull request title"/>
+    <figcaption class="figure-caption text-muted">
+        Requesting code review by adding [pr] to a GitHub pull request title
+    </figcaption>
+</figure>
+
+
+<h5 id="option-3-request-from-the-pullrequest-dashboard">Option 3: Request from the PullRequest dashboard</h5>
+
+<p>In your dashboard you can request code review by selecting &ldquo;Request Review.&rdquo;</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/manually-request-code-review-github.png" alt="Requesting a manual code review from the PullRequest dashboard"/>
+    <figcaption class="figure-caption text-muted">
+        Requesting a manual code review from the PullRequest dashboard
+    </figcaption>
+</figure>
+
+
+<h3 id="step-3-receive-feedback-in-your-github-code-review-process">Step 3: Receive feedback in your GitHub code review process</h3>
+
+<p>After a pull request is submitted, a reviewer looks for issues and opportunities to improve the code’s quality.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/github-code-review-request.png" alt="A request for code review on a GitHub pull request"/>
+    <figcaption class="figure-caption text-muted">
+        A request for code review on a GitHub pull request
+    </figcaption>
+</figure>
+
+
+<p>Professional reviewers provide code quality feedback on opportunities to fix bugs, remove security issues, improve maintainability, and implement coding best practices. Their feedback instantly syncs within your GitHub code review workflow.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/code-review-feedback-on-github-pull-request.png" alt="A code review comment on a GitHub pull request"/>
+    <figcaption class="figure-caption text-muted">
+        A code review comment on a GitHub pull request
+    </figcaption>
+</figure>
+
+
+<p>Thanks to the new integration with GitHub, your developers receive feedback inline with their code inside of GitHub. If needed they can respond to the code reviewers within GitHub.</p>
+
+
+<figure class="figure">
+    <img class="img-fluid" src="https://www.pullrequest.com/blog/github-code-review-service/images/inline-pullrequest-code-review-feedback-github.png" alt="An inline code review comment on a GitHub pull request"/>
+    <figcaption class="figure-caption text-muted">
+        An inline code review comment on a GitHub pull request
+    </figcaption>
+</figure>
+
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>To get started with our GitHub integration, sign up for PullRequest, connect to GitHub, and request a review.</p>
+
+<p>Read our documentation for more on <a href="https://docs.pullrequest.com/adding-github-repositories-to-pullrequest/">adding GitHub repositories</a> and <a href="https://docs.pullrequest.com/assigning-github-code-reviews-to-pullrequest/">assigning GitHub pull requests for code review</a>. If you would like additional help or have feedback, please <a href="mailto:support@pullrequest.com">send us an email</a>. We&rsquo;re happy to walk you through getting set up.</p>
+
+<h5 id="about-pullrequest-s-professional-code-reviewer-network">About PullRequest&rsquo;s professional code reviewer network</h5>
+
+<p>PullRequest&rsquo;s reviewer network is made up thousands of vetted software engineers from companies such as Google, Amazon, Dropbox, Microsoft, Facebook, and Mozilla. They have strong backgrounds in <a href="https://support.pullrequest.com/hc/en-us/articles/115001076974-What-technologies-does-PullRequest-support-">every popular programming language and technology</a> allowing for code quality feedback for every software project.</p>
+
+<h5 id="about-github">About GitHub</h5>
+
+<p>With over 57 million repositories, GitHub is the largest host of source code in the world. Millions of developers across the world rely on it every day to manage their development workflow. GitHub has a wide variety of integrations that support development teams. With this launch, PullRequest is the first GitHub app to offer code quality feedback from professionals seamlessly in a GitHub workflow.</p>
+
+<p><em>Update: We have added support for other source code hosting services using Git for version control: <a href="https://www.pullrequest.com/blog/bitbucket-code-review-service/">Bitbucket Cloud</a> and <a href="https://www.pullrequest.com/blog/gitlab-code-review-service/">GitLab.com</a>.</em></p></article>
+          <div id="blog-closing" class="pt-3">
+            <div class="social-buttons">
+    <h5>Share this post</h5>
+    <div class="social">
+        <a class="social-icon twitter"
+           href="#"
+           data-social="twitter"
+           data-medium="social"
+           data-target="url"
+           data-link="https://twitter.com/intent/tweet?text=Code Review as a Service on GitHub&via=pullrequestcom"
+           title="Share on Twitter" target="_blank" rel="noopener">
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon linkedin"
+           href="#"
+           data-social="linkedin"
+           data-medium="social"
+           data-target="url"
+           data-link="https://www.linkedin.com/shareArticle?mini=true&title=code-review-as-a-service-on-github&source=PullRequest"
+           title="Share on LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon reddit"
+           href="#"
+           data-social="reddit"
+           data-medium="social"
+           data-target="url"
+           data-link="https://reddit.com/submit?title=Code Review as a Service on GitHub"
+           title="Share on Reddit" target="_blank" rel="noopener">
+            <i class="fab fa-reddit fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon facebook"
+           href="#"
+           data-target="href"
+           data-social="facebook"
+           data-medium="social"
+           data-link="https://www.facebook.com/dialog/share?app_id=2106461146276546&display=popup"
+           title="Share on Facebook" rel="noopener">
+            <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon hackernews"
+           href="#"
+           data-social="hackernews"
+           data-medium="social"
+           data-target="u"
+           data-link="https://news.ycombinator.com/submitlink?t=Code Review as a Service on GitHub"
+           title="Share on Hacker News" target="_blank" rel="noopener">
+            <i class="fab fa-hacker-news fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon email" data-tooltip="Send via email"
+           href="#"
+           data-target="body"
+           data-link="mailto:?subject=Code Review as a Service on GitHub&"
+           data-social="send+via+email"
+           data-medium="email"
+           title="Send via email" rel="noopener">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+            <hr />
+            <h4 id="about pullrequest">About PullRequest</h4>
+            <p>
+              PullRequest is a platform for code review, built for teams of all
+              sizes. We have the world's largest network of on-demand reviewers,
+              backed by best-in-class automation tools. Because code quality is
+              important.
+              <a class="link-cta blog-link" href="https://www.pullrequest.com"
+                >Learn more about PullRequest</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-12">
+        <div class="text-center">
+          <img
+            class="avatar sm mx-auto d-block mt-2 mb-3"
+            src="https://www.pullrequest.com/images/headshots/brennan-angel.jpg"
+            alt="Brennan Angel headshot"
+          />
+          <h6>by Brennan Angel</h6>
+          <p class="text-muted">December 11, 2017</p>
+        </div>
+        <div class="text-center">
+          <div class="social-buttons">
+    <h5>Share this post</h5>
+    <div class="social">
+        <a class="social-icon twitter"
+           href="#"
+           data-social="twitter"
+           data-medium="social"
+           data-target="url"
+           data-link="https://twitter.com/intent/tweet?text=Code Review as a Service on GitHub&via=pullrequestcom"
+           title="Share on Twitter" target="_blank" rel="noopener">
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon linkedin"
+           href="#"
+           data-social="linkedin"
+           data-medium="social"
+           data-target="url"
+           data-link="https://www.linkedin.com/shareArticle?mini=true&title=code-review-as-a-service-on-github&source=PullRequest"
+           title="Share on LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon reddit"
+           href="#"
+           data-social="reddit"
+           data-medium="social"
+           data-target="url"
+           data-link="https://reddit.com/submit?title=Code Review as a Service on GitHub"
+           title="Share on Reddit" target="_blank" rel="noopener">
+            <i class="fab fa-reddit fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon facebook"
+           href="#"
+           data-target="href"
+           data-social="facebook"
+           data-medium="social"
+           data-link="https://www.facebook.com/dialog/share?app_id=2106461146276546&display=popup"
+           title="Share on Facebook" rel="noopener">
+            <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon hackernews"
+           href="#"
+           data-social="hackernews"
+           data-medium="social"
+           data-target="u"
+           data-link="https://news.ycombinator.com/submitlink?t=Code Review as a Service on GitHub"
+           title="Share on Hacker News" target="_blank" rel="noopener">
+            <i class="fab fa-hacker-news fa-2x" aria-hidden="true"></i>
+        </a>
+        <a class="social-icon email" data-tooltip="Send via email"
+           href="#"
+           data-target="body"
+           data-link="mailto:?subject=Code Review as a Service on GitHub&"
+           data-social="send+via+email"
+           data-medium="email"
+           title="Send via email" rel="noopener">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer bg-dark">
+    <div class="col-md-10 offset-md-1">
+        <div class="row pt-5">
+            <div class="col-md-2 col-sm-3 offset-md-1 offset-sm-0 offset-lg-2">
+                <ul>
+                    <li>
+                        <h6 class="topic-header">Product</h6>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/pricing/">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/technical-screening/">Technical Screening</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/customer-stories/">Customer Stories</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/product/faq/">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <ul>
+                    <li>
+                        <h6 class="topic-header">Reviewers</h6>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/reviewers/become-a-reviewer/">Become a Reviewer</a>
+                    </li>
+                    <li>
+                        <a href="https://reviewer.pullrequest.com/login">Reviewer Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <ul>
+                    <li>
+                        <h6 class="topic-header">Company</h6>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/blog/">Blog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/about/team/">Team</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/about/investors/">Investors</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/press/">Press</a>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/careers/">Careers</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <ul>
+                    <li>
+                        <h6 class="topic-header">Support</h6>
+                    </li>
+                    <li>
+                        <a href="https://www.pullrequest.com/contact/">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="https://docs.pullrequest.com/pullrequest-docs/">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="https://support.pullrequest.com/hc/en-us">Get Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-md-8 offset-md-2 text-center">
+            <div class="col-md-12 text-md-center py-3">
+                <a href="https://www.pullrequest.com/" title="PullRequest Home Page">
+                    <img src="https://www.pullrequest.com/images/logos/pullrequest-circle-logo.svg" class="logo" alt="PullRequest Logo"
+                         height="50">
+                </a>
+            </div>
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/pullrequestinc" target="_blank" class="logo"
+                   title="PullRequest's Facebook Profile" rel="noopener">
+                    <img src="https://www.pullrequest.com/images/logos/social/i-facebook-logo.svg" alt="Facebook Logo">
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://github.com/pullrequestinc" target="_blank" title="PullRequest's GitHub Profile"
+                   rel="noopener">
+                    <img src="https://www.pullrequest.com/images/logos/social/i-github-logo.svg" alt="Github Logo">
+                    <span class="sr-only">GitHub</span>
+                </a>
+                <a href="https://twitter.com/pullrequestcom" target="_blank" title="PullRequest's Twitter Profile"
+                   rel="noopener">
+                    <img src="https://www.pullrequest.com/images/logos/social/i-twitter-logo.svg" alt="Twitter Logo">
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://www.linkedin.com/company/pullrequest" target="_blank" title="PullRequest's LinkedIn"
+                   rel="noopener">
+                    <img src="https://www.pullrequest.com/images/logos/social/i-linkedin-logo.svg" alt="LinkedIn Logo">
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+            </div>
+            <div class="text-md-center font-size-12 pt-3">
+                <a href="https://www.pullrequest.com/terms/">Terms of Use</a> |
+                <a href="https://www.iubenda.com/privacy-policy/63537423" class="iubenda-nostyle no-brand iubenda-embed"
+                   title="Privacy Policy ">Privacy Policy</a> |
+                <script type="text/javascript">(function (w, d) {
+                  var loader = function () {
+                    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[ 0 ];
+                    s.src = "https://cdn.iubenda.com/iubenda.js";
+                    tag.parentNode.insertBefore(s, tag);
+                  };
+                  if (w.addEventListener) {
+                    w.addEventListener("load", loader, false);
+                  } else if (w.attachEvent) {
+                    w.attachEvent("onload", loader);
+                  } else {
+                    w.onload = loader;
+                  }
+                })(window, document);</script>
+                <a href="https://www.pullrequest.com/security/">Security</a>
+                <br/>
+            </div>
+            <div class="text-md-center font-size-10">
+                <span>Copyright © 2019 PullRequest, Inc. All Rights Reserved.</span>
+                <br/>
+                <span class="footer-disclaimer-small">All marks owned by their respective owners and do not represent an endorsement.</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="https://www.pullrequest.com/js/app.js?a45bdd85f3f57841b9ce6abc9cc43fc2" data-auto-add-css="false"></script>
+
+
+<script type="text/javascript">
+    var _kiq = _kiq || [];
+    (function () {
+        setTimeout(function () {
+            var d = document, f = d.getElementsByTagName('script')[ 0 ], s = d.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://cl.qualaroo.com/ki.js/3/gPu.js';
+            f.parentNode.insertBefore(s, f);
+        }, 1);
+    })();
+</script>
+<script type="text/javascript">
+adroll_adv_id = "TZSPE5DEZBH75EHDLNJIAW";
+adroll_pix_id = "NVD674USIBDCRGIE6SORX6";
+
+(function () {
+  var _onload = function(){
+    if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+    if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+    var scr = document.createElement("script");
+    var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+    scr.setAttribute('async', 'true');
+    scr.type = "text/javascript";
+    scr.src = host + "/j/roundtrip.js";
+    ((document.getElementsByTagName('head') || [null])[0] ||
+      document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+  };
+  if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+  else {window.attachEvent('onload', _onload)}
+}());
+</script>
+</body>
+</html>
