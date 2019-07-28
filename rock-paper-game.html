@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dave's Alchemy Lab Challenge</title>
-    <link rel="stylesheet" href="./rock-paper-game.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/rock-paper-game.css">
 </head>
 <body>
     <header>
         <p>
-            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="../assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="../assets/github-logo.png" alt="Logo of GitHub">
+            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="assets/github-logo.png" alt="Logo of GitHub">
         </p>
         <hr>
         <nav>
             <table>
                 <tr>
-                    <td><a href="/">Home</a></td>
-                    <td><a href="/src/guessing-game.html">Guessing Game</a></td>
-                    <td><a href="/src/rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
-                    <td><a href="/src/about-me.html">About Me</a></td>
+                    <td><a href="guessing-game.html">Guessing Game</a></td>
+                    <td><a href="rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
+                    <td><a href="index.html">About Me</a></td>
                 </tr>
             </table>
         </nav>
@@ -30,13 +29,17 @@
         <section>
             <h2>Game Play</h2>
             <p>
-                Click on one of the left-side icons to throw. The computer will play randomly.
+                Click on one of the left-side icons to throw. The computer will play against you and the computer always plays randomly.
             </p>
+            <ul>
+                <li><em>Rock beats Scissors</em></li>
+                <li><em>Paper beats Rock</em></li>
+                <li><em>Scissors beats Paper</em></li>
+            </ul>
             <p>
                 This game has a betting feature which can be enabled or disabled using the checkbox on the right. 
-                When betting is enabled, both players will start with the same number of chips in their stack. 
-                Set your bet amount before throwing your rock/paper/scissors. 
-                The game will end when one of the players has run out of chips. 
+                When betting is enabled, each player will start with <span id="starting-chips"></span> chips in their stack. 
+                Set your bet amount before making your throw. The game will end when one player has run out of chips. 
             </p>
         </section>
         <section>
@@ -48,8 +51,8 @@
             <h2>Let's Play!</h2>
             <p class="centered">
                 <label>
-                    <img class="rps-box button-image" src="../assets/rock.jpg" alt="rock">
                     <button class="user-button" id="throw-rock"></button>
+                    <img class="rps-box button-image" src="assets/rock.jpg" alt="rock">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
@@ -57,23 +60,23 @@
             <p class="centered">
                 <label>
                     <button class="user-button"  id="throw-paper"></button>
-                    <img class="rps-box button-image" src="../assets/paper.jpg" alt="paper">
+                    <img class="rps-box button-image" src="assets/paper.jpg" alt="paper">
                 </label>
-                <img class="rps-box" src="../assets/versus.png" alt="">
-                <img class="rps-box computer-baseline computer-spin computer-thrown" id="computer-throw" src="../assets/rock.jpg" alt="image of the computer's throw">
+                <img class="rps-box" src="assets/versus.png" alt="">
+                <img class="rps-box computer-baseline computer-spin computer-thrown" id="computer-throw" src="assets/rock.jpg" alt="image of the computer's throw">
             </p>
             <p class="centered">
                 <label>
                     <button class="user-button"  id="throw-scissors"></button>
-                    <img class="rps-box button-image" src="../assets/scissors.jpg" alt="scissors">
+                    <img class="rps-box button-image" src="assets/scissors.jpg" alt="scissors">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
             </p>
             <p class="centered">
                 <span class="rps-box user-winner-text" id="human-wins-text">You Win!</span>
-                <span class="rps-box tie-game-text" id="tie-game-text">Tied, Throw Again</span>
-                <span class="rps-box computer-winner-text" id="computer-wins-text">I Win!</span>
+                <span class="rps-box tie-game-text" id="tie-game-text">Tied. Throw Again</span>
+                <span class="rps-box computer-winner-text" id="computer-wins-text">You Lose!</span>
             </p>
             <p class="centered">
                 <label id="bet-input">
@@ -93,9 +96,9 @@
                 <span class="rps-box stack-amount" id="computer-stack-count">0</span>
             </p>
             <p class="centered">
-                <span class="rps-box tally-heading" id="human-wins-message">Your Wins</span>
+                <span class="rps-box tally-heading" id="human-wins-message">Wins</span>
                 <span class="rps-box tally-heading" id="tie-games-message">Ties</span>
-                <span class="rps-box tally-heading" id="computer-wins-message">My Wins</span>
+                <span class="rps-box tally-heading" id="computer-wins-message">Losses</span>
             </p>
             <p class="centered">
                 <span class="rps-box tally-amount" id="human-wins-counter"></span>
@@ -106,9 +109,9 @@
     </main>
     <footer>
         <p>
-            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost"> my Git Hub</a>
+            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost" target="_blank"> my Git Hub</a>
         </p>
     </footer>
-    <script src="./rock-paper-game.js" type="module"></script>
+    <script src="src/rock-paper-game.js" type="module"></script>
 </body>
 </html>

@@ -5,37 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dave's Alchemy Lab Challenge</title>
-    <link rel="stylesheet" href="./src/main.css">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/about-me.css">
 </head>
 <body>
     <header>
         <p>
-            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="./assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="./assets/github-logo.png" alt="Logo of GitHub">
+            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="assets/github-logo.png" alt="Logo of GitHub">
         </p>
         <hr>
         <nav>
             <table>
                 <tr>
-                    <td><a href="/">Home</a></td>
-                    <td><a href="/src/guessing-game.html">Guessing Game</a></td>
-                    <td><a href="/src/rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
-                    <td><a href="/src/about-me.html">About Me</a></td>
+                    <td><a href="guessing-game.html">Guessing Game</a></td>
+                    <td><a href="rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
+                    <td><a href="index.html">About Me</a></td>
                 </tr>
             </table>
         </nav>
     </header>
     <main>
         <article>
-            <h1>This page intentionally left blank</h1>
-            <img src="./assets/blanks.jpg" alt="a blank image">
+            <h1>About Me and My Favorite Sports</h1>
+            <p>
+                I'm wild about fringe sports. Stuff that you've heard of but never tried. Sports that are for long-haired hippies
+                and skate rats. Well, call me a Gen-Xer. That's just how I like it. 
+            </p>
+            <p>
+                Here are my favorite sports, in chronological order of my introduction to them:
+            </p>
+            <ol>
+                <li>Rock Climbing</li>
+                <li>Disc Golf</li>
+                <li>BMX Biking</li>
+            </ol>
+            <section>
+                <figure class="float-right">
+                    <iframe height="250" src="https://www.youtube.com/embed/83MXWrY8exc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption class="caption">Me climbing in Squamish, British Columbia</figcaption>
+                </figure>
+
+                <h2>Rock Climbing</h2>
+                <p>
+                    I started climbing in 2000 at the age of 20 with my college friend Drew. We learned at a local Pittsburgh 
+                    rock climbing gym that had a bouldering wall and some top-rope routes. We mostly climbed on the bouldering
+                    wall. I loved bouldering becuase of the problem solving aspect of it. It felt like solving a puzzle, and I love puzzles.
+                </p>
+                <p>
+                    In early 2003, Drew and I took a 2-month road trip around the western and southern edges of the USA.  
+                    Most of our stopping points were outdoor bouldering areas. Some of the highlights included Yosemite, 
+                    Joshua Tree, Hueco Tanks, and a sweet sandstone boulder field in Alabama. This trip was one of the
+                    highlights of the time I spent rock climbing.
+                </p>
+                <p>
+                    Another great bouldering destination is at Squamish, British Columbia. I visited here twice and have many 
+                    great memories of the granite boulders there. Check out the 2000's era video of me 'rocking' out at Squamish!
+                </p>
+            </section>
+            <section>
+                <h2>Disc Golf</h2>
+                <p>
+                    In 2005, I moved to Portland and found that rock climbing, specifically bouldering outdoors, was not in high supply.
+                    It was then that my friend Dave G introduced me to the sport of Disc Golf. At the time we were playing for fun and
+                    we called it "frolf" (a slang term that combines the words frisbee and golf). 
+                </p>
+                <p>
+                    After playing for fun for five years I followed my friend into the competitive side of the sport. I began doing drills
+                    and practicing different shot shapes. I worked on my distance in the field, and at my strongest I could throw 380 feet. 
+                    I had been bitten by "the bug" and I was serious about <strike>Frolf</strike> Disc Golf. 
+                </p>
+                <p>
+                    Over the 8 years I have been growing my disc golf game, the sport itself has been growing in leaps and bounds. There are professional
+                    athletes I follow as they compete in the Disc Golf National Tour and the Disc Golf Pro Tour. The coverage airs on YouTube 
+                    and I have spent countless hours watching post-production coverage of my favorite players competing.
+                </p>
+                <p>
+                    Here are some of my favorite pro players (can you guess which one has a $1 million contract right now?):
+                </p>
+                <ul>
+                    <li>Eagle McMahon</li>
+                    <li>Catrina Allen</li>
+                    <li>Paul McBeth</li>
+                    <li>Nate Sexton</li>
+                    <li>Kevin Jones</li>
+                </ul>
+            </section>
+            <section>
+                <h2>BMX Biking</h2>
+                <p>
+                    <img class="float-right small-logo" src="assets/Lumberyard_Logo.png" alt="Logo of The Lumberyard BMX Park">
+                    I got into BMX biking because of my son. Some friends had recommended a bike park to us that was fun for kids
+                    to ride at. It was called "The Lumberyard". I went there with my son and when he was strong enough 
+                    to ride the courses without my help, I started riding with him. It was fun! (And, I had no idea what I was doing)
+                </p>
+                <p>
+                    When my son was 7 he spent several months taking weekly classes at the lumberyard. During class hours, 
+                    they offered a reduced rate for parents, and I took advantage of this. I met other parents who rode; we started
+                    riding together; we rode more and more. Some tips we got along the way from other riders and some of the coaches 
+                    went a long way and we slowly improved our skills.
+                </p>
+                <p>
+                    Now I am almost good enough to keep up with my son!
+                </p>
+            </section>
         </article>
+        <button class="quiz-box" id="quiz-button">
+            Take My Quiz!
+        </button>
+        <div class="quiz-box hidden" id="results-area">
+            <p>
+                <span id="user-name"></span>, your grade is <span id="grade-text"></span> <br> 
+                <img id="pass-img-1" class="results-mark hidden" src="assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-1" class="results-mark hidden" src="assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <img id="pass-img-2" class="results-mark hidden" src="assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-2" class="results-mark hidden" src="assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <img id="pass-img-3" class="results-mark hidden" src="assets/pass-1.png" alt="a single checkmark">
+                <img id="fail-img-3" class="results-mark hidden" src="assets/fail-trump-vector-clipart.png" alt="a single failure mark">
+                <br>
+                <img id="one-correct" class="hidden" src="assets/1outof3.jpg" alt="image with caption 'one out of 3 ain't bad'">
+            </p>
+        </div>
     </main>
     <footer>
         <p>
-            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost"> my Git Hub</a>
+            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost" target="_blank"> my Git Hub</a>
         </p>
     </footer>
-    <script src="../src/main.js" type="module"></script>
+    <script src="src/about-me.js" type="module"></script>
 </body>
 </html>

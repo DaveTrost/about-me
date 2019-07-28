@@ -4,6 +4,7 @@ export const SCISSORS = 'scissors';
 export const TIE = 'tie';
 export const USER_WINS = 'user wins';
 export const COMPUTER_WINS = 'computer wins';
+export const STARTING_CHIPS = 50;
 
 export function getThrowFromNumber(num) {
     switch(num) {
