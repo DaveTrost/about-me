@@ -99,12 +99,6 @@ label {
     transform: rotateX(1800deg);
 }
 
-/* .computer-thrown:active, .computer-thrown {
-    opacity: 1.0;
-    border: 10px solid red;
-    box-shadow: 2px 3px 3px black;
-} */
-
 .results-table {
     width: 100%;
     margin: auto;

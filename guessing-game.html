@@ -38,25 +38,41 @@
 
             <section class="game-area">
                 <h2>Let's Play</h2>
+                <p>Guess a number between 1 and 20</p>
+                <label class="slider-guess">
+                    <p class="tick-label">1</p>
+                    <p class="tick-label">2</p>
+                    <p class="tick-label">3</p>
+                    <p class="tick-label">4</p>
+                    <p class="tick-label">5</p>
+                    <p class="tick-label">6</p>
+                    <p class="tick-label">7</p>
+                    <p class="tick-label">8</p>
+                    <p class="tick-label">9</p>
+                    <p class="tick-label">10</p>
+                    <p class="tick-label">11</p>
+                    <p class="tick-label">12</p>
+                    <p class="tick-label">13</p>
+                    <p class="tick-label">14</p>
+                    <p class="tick-label">15</p>
+                    <p class="tick-label">16</p>
+                    <p class="tick-label">17</p>
+                    <p class="tick-label">18</p>
+                    <p class="tick-label">19</p>
+                    <p class="tick-label">20</p>
+                    <input type="range" id="guess-range" name="guess" min="1" max="20">
+                </label>
                 <label>
-                    Guess a number between 1 and 20<br>
                     <div class="buttons-box">
+                        <span>
                         <input type="number" name="user-guess" id="user-guess">
-                        <button id="guess-button">
-                            Am I Right?
-                        </button>
+                            <button id="guess-button">Am I Right?</button>
+                        </span>    
+                        <button id="play-again">Restart Game</button>
                     </div>
                 </label>
                 <p>Attempts Remaining = <span id="remaining">4</span></p>
-                <p>Status: <span id="status"></span></p>
-                <label id="play-again-box" class="hidden">
-                    Do you want to play again?<br>
-                    <div class="buttons-box">
-                        <button id="play-again">
-                            Restart
-                        </button>
-                    </div>
-                </label>
+                <p class="status-message"><div class="default-status" id="status-message">You Win!</div></p>
             </section>
         </article>
     </main>

@@ -1,4 +1,78 @@
+header, main, footer {
+    min-width: 250px;
+}
+
 .game-area {
     background-color: #ECE159;
     padding: 10px;
+    display: block;
+    min-width: 200px;
+    max-width: 520px;
 }
+
+
+.slider-guess {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+}
+.tick-label {
+    font-size: 10px;
+    text-align: center;
+    width: 5%;
+}
+#guess-range {
+    width: 100%;
+}
+
+
+#user-guess {
+    width: 75px;
+}
+.buttons-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#play-again {
+    margin-right: 20px;
+}
+
+
+.status-message {
+    margin-top: 30px;
+}
+.default-status, .too-high-status, .too-low-status {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    height: 72px;
+    border: none;
+}
+.too-high-status {
+    font-size: 2.5em;
+}
+.too-low-status {
+    font-size: 1em;
+}
+.winner-status {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 5px;
+    border: 15px double green;
+    border-radius: 20px;
+    min-height: 37px;
+    max-width: 370px;
+}
+.loser-status {
+    font-family: 'Montserrat-Black';
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 5px;
+    border: 15px double red;
+    border-radius: 20px;
+    min-height: 37px;
+    max-width: 370px;
+}
+
