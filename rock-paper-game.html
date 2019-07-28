@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dave's Alchemy Lab Challenge</title>
-    <link rel="stylesheet" href="./rock-paper-game.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/rock-paper-game.css">
 </head>
 <body>
     <header>
         <p>
-            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="../assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="../assets/github-logo.png" alt="Logo of GitHub">
+            An Alchemy Code Challenge hosted on GitHub <img class="logo-top" id="alchemy-logo" src="assets/Switchup_Alchemy_Logo.png" alt="Logo of Alchemy Code Lab"> <img class="logo-top" id="github-logo" src="assets/github-logo.png" alt="Logo of GitHub">
         </p>
         <hr>
         <nav>
             <table>
                 <tr>
-                    <td><a href="/">Home</a></td>
-                    <td><a href="/src/guessing-game.html">Guessing Game</a></td>
-                    <td><a href="/src/rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
-                    <td><a href="/src/about-me.html">About Me</a></td>
+                    <td><a href="guessing-game.html">Guessing Game</a></td>
+                    <td><a href="rock-paper-game.html">Rock-Paper-Scissors Game</a></td>
+                    <td><a href="about-me.html">About Me</a></td>
                 </tr>
             </table>
         </nav>
@@ -48,7 +47,7 @@
             <h2>Let's Play!</h2>
             <p class="centered">
                 <label>
-                    <img class="rps-box button-image" src="../assets/rock.jpg" alt="rock">
+                    <img class="rps-box button-image" src="assets/rock.jpg" alt="rock">
                     <button class="user-button" id="throw-rock"></button>
                 </label>
                 <img class="rps-box invisible" src="" alt="">
@@ -57,15 +56,15 @@
             <p class="centered">
                 <label>
                     <button class="user-button"  id="throw-paper"></button>
-                    <img class="rps-box button-image" src="../assets/paper.jpg" alt="paper">
+                    <img class="rps-box button-image" src="assets/paper.jpg" alt="paper">
                 </label>
-                <img class="rps-box" src="../assets/versus.png" alt="">
-                <img class="rps-box computer-baseline computer-spin computer-thrown" id="computer-throw" src="../assets/rock.jpg" alt="image of the computer's throw">
+                <img class="rps-box" src="assets/versus.png" alt="">
+                <img class="rps-box computer-baseline computer-spin computer-thrown" id="computer-throw" src="assets/rock.jpg" alt="image of the computer's throw">
             </p>
             <p class="centered">
                 <label>
                     <button class="user-button"  id="throw-scissors"></button>
-                    <img class="rps-box button-image" src="../assets/scissors.jpg" alt="scissors">
+                    <img class="rps-box button-image" src="assets/scissors.jpg" alt="scissors">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
@@ -106,9 +105,9 @@
     </main>
     <footer>
         <p>
-            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost"> my Git Hub</a>
+            created by Dave Trost. For similar work, see <a href="https://github.com/DaveTrost" target="_blank"> my Git Hub</a>
         </p>
     </footer>
-    <script src="./rock-paper-game.js" type="module"></script>
+    <script src="src/rock-paper-game.js" type="module"></script>
 </body>
 </html>

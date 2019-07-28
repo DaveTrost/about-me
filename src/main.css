@@ -116,8 +116,14 @@ header {
     font-family: 'RockSalt-Regular';    
 }
 
+nav {
+    font-size: 100%;
+}
 nav table {
-    font-size: 0.9em;
+    /* font scaling between a min and a max using calc from: https://css-tricks.com/books/volume-i/scale-typography-screen-size/ */
+    /* generalized equation follows:*/
+    /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+    font-size: calc(10px + (100vw - 300px) / 130);
     width: 100%;
     margin: auto;   
 }

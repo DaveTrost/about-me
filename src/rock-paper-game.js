@@ -191,6 +191,6 @@ function takeBets() {
     }
 }
 
-const setImg = (item) => computerThrowEle.src = '../assets/' + item + '.jpg';
+const setImg = (item) => computerThrowEle.src = 'assets/' + item + '.jpg';
     
     
