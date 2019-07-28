@@ -1,7 +1,5 @@
-// import functions
 import testGuess from './testGuess.js';
 
-// Get DOM elements
 const guessSlider = document.getElementById('guess-range');
 const userGuessEle = document.getElementById('user-guess');
 const guessButtonEle = document.getElementById('guess-button');
@@ -9,7 +7,6 @@ const attemptsRemainingEle = document.getElementById('remaining');
 const statusMsgEle = document.getElementById('status-message');
 const replayButtonEle = document.getElementById('play-again');
 
-// Set states and initialize variables
 let attemptsRemaining = 4;
 let correctNumber = Math.floor(Math.random() * 20) + 1;
 let gameWon = false;
@@ -27,7 +24,6 @@ statusMsgEle.textContent = defaultMsg;
 statusMsgEle.className = defaultStyle;
 userGuessEle.value = guessSlider.value;
 
-// event handlers
 guessSlider.addEventListener('change', () => userGuessEle.value = guessSlider.value);
 guessButtonEle.addEventListener('click', () => {
     if(userGuessEle.value < 1) {

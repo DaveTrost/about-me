@@ -80,9 +80,6 @@ function computerMakeThrow() {
     userWinsTextEle.classList.add('invisible');
     tieGameTextEle.classList.add('invisible');
     computerWinsTextEle.classList.add('invisible');
-    // rockButtonEle.classList.remove('user-button:hover');
-    // paperButtonEle.classList.remove('user-button:hover');
-    // scissorsButtonEle.classList.remove('user-button:hover');
     computerThrowEle.classList.remove('computer-spin');
     computerThrowEle.classList.add('computer-spin');
     computerThrown = getThrow();
@@ -185,11 +182,7 @@ function takeBets() {
             betAmount = userChips;
             betAmountEle.value = '' + betAmount;
             alert('Bet has been reduced to ' + betAmount + ' due to insufficient funds.');
-        } else if(betAmount > computerChips) {
-            // betAmount = computerChips;
-            // betAmountEle.value = '' + betAmount;
-            // alert('Bet has been reduced to ' + betAmount + ', which puts me ALL IN.');
-        }
+        } 
     }
 }
 

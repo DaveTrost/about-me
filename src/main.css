@@ -32,7 +32,6 @@ article h2, section h2 {
     width: 100%;
 }
 article, section {
-    /* font-family: 'YesevaOne-Regular'; */
     font-family: 'Montserrat-SemiBold';
 }
 .caption {
@@ -40,7 +39,6 @@ article, section {
     font-size: 0.8em
 }
 
-/* create a centered box for all tags in the body */
 header, main, .quiz-box, footer {
     width: 80%;
     max-width: 60rem;
@@ -49,12 +47,10 @@ header, main, .quiz-box, footer {
     margin: auto;
 }
 
-/* Set a background color behind the content */
 body {
     background-color: #511638;
 }
 
-/* provide unique colors for the main content boxes */
 main {
     background-color: #4ACEDB;
 }
@@ -65,7 +61,6 @@ footer {
     background-color: #DB2048;
 }
 
-/* set classes to be adjusted by JS */
 .hidden {
     display: none;
 }
@@ -73,7 +68,6 @@ footer {
     visibility: hidden;
 }
 
-/* set up floating classes */
 .float-right {
     float: right;
 }
@@ -81,12 +75,10 @@ footer {
     float: left;
 }
 
-/* Border details for iFrame elements */
 iFrame {
     border: 0px;
 }
 
-/* adjust image sizes */
 .small-logo {
     height: 60px;
     padding: 20px;
@@ -95,7 +87,6 @@ iFrame {
     vertical-align: middle;
 }
 
-/* The text and images in the header need to be massaged to look good on a single line */
 header {
     font-size: 130%;
     text-align: center;
@@ -107,7 +98,6 @@ header {
     width: 7%;
 }
 
-/* Special formatting for the header, footer and nav regions */
 footer {
     font-size: 100%;
 }
