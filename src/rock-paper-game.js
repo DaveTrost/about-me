@@ -1,5 +1,6 @@
-import { getThrow, ROCK, PAPER, SCISSORS, getWinner, TIE, USER_WINS, COMPUTER_WINS } from './get-throw.js';
+import { getThrow, ROCK, PAPER, SCISSORS, getWinner, TIE, USER_WINS, COMPUTER_WINS, STARTING_CHIPS } from './get-throw.js';
 
+const startingChipsEle = document.getElementById('starting-chips');
 const rockButtonEle = document.getElementById('throw-rock');
 const paperButtonEle = document.getElementById('throw-paper');
 const scissorsButtonEle = document.getElementById('throw-scissors');
@@ -24,9 +25,10 @@ let computerThrown;
 let userTally = 0;
 let tiesTally = 0;
 let computerTally = 0;
-let humanChips = 10;
-let computerChips = 10;
+let humanChips = STARTING_CHIPS;
+let computerChips = STARTING_CHIPS;
 let betAmount = 0;
+startingChipsEle.textContent = STARTING_CHIPS;
 betAmountEle.value = '' + betAmount;
 
 userWinsTextEle.classList.add('invisible');
@@ -63,7 +65,7 @@ function finishGameAfterAnimation() {
     const winner = getWinner(userThrown, computerThrown);
     updateResults(winner);
     updateBetting();
-    setTimeout(() => resetGame(), 1000);
+    setTimeout(() => resetGame(), 700);
 }
 
 function displayUserChoice() {
@@ -100,14 +102,14 @@ function updateResults(winner) {
         case USER_WINS:
             userWinsTextEle.classList.remove('invisible');
             userTallyEle.textContent = ++userTally;
-            humanChips += betAmount;
-            computerChips -= betAmount;
+            humanChips = Math.min(humanChips + betAmount, STARTING_CHIPS * 2);
+            computerChips = STARTING_CHIPS * 2 - humanChips;
             break;
         case COMPUTER_WINS:
             computerWinsTextEle.classList.remove('invisible');
             computerTallyEle.textContent = ++computerTally;
-            humanChips -= betAmount;
-            computerChips += betAmount;
+            humanChips = Math.max(humanChips - betAmount, 0);
+            computerChips = STARTING_CHIPS * 2 - humanChips;
             break;
     }
 }
@@ -184,9 +186,9 @@ function takeBets() {
             betAmountEle.value = '' + betAmount;
             alert('Bet has been reduced to ' + betAmount + ' due to insufficient funds.');
         } else if(betAmount > computerChips) {
-            betAmount = computerChips;
-            betAmountEle.value = '' + betAmount;
-            alert('Bet has been reduced to ' + betAmount + ', which puts me ALL IN.');
+            // betAmount = computerChips;
+            // betAmountEle.value = '' + betAmount;
+            // alert('Bet has been reduced to ' + betAmount + ', which puts me ALL IN.');
         }
     }
 }

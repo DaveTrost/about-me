@@ -29,13 +29,17 @@
         <section>
             <h2>Game Play</h2>
             <p>
-                Click on one of the left-side icons to throw. The computer will play randomly.
+                Click on one of the left-side icons to throw. The computer will play against you and the computer always plays randomly.
             </p>
+            <ul>
+                <li><em>Rock beats Scissors</em></li>
+                <li><em>Paper beats Rock</em></li>
+                <li><em>Scissors beats Paper</em></li>
+            </ul>
             <p>
                 This game has a betting feature which can be enabled or disabled using the checkbox on the right. 
-                When betting is enabled, both players will start with the same number of chips in their stack. 
-                Set your bet amount before throwing your rock/paper/scissors. 
-                The game will end when one of the players has run out of chips. 
+                When betting is enabled, each player will start with <span id="starting-chips"></span> chips in their stack. 
+                Set your bet amount before making your throw. The game will end when one player has run out of chips. 
             </p>
         </section>
         <section>
@@ -47,8 +51,8 @@
             <h2>Let's Play!</h2>
             <p class="centered">
                 <label>
-                    <img class="rps-box button-image" src="assets/rock.jpg" alt="rock">
                     <button class="user-button" id="throw-rock"></button>
+                    <img class="rps-box button-image" src="assets/rock.jpg" alt="rock">
                 </label>
                 <img class="rps-box invisible" src="" alt="">
                 <img class="rps-box invisible" src="" alt="">
@@ -71,8 +75,8 @@
             </p>
             <p class="centered">
                 <span class="rps-box user-winner-text" id="human-wins-text">You Win!</span>
-                <span class="rps-box tie-game-text" id="tie-game-text">Tied, Throw Again</span>
-                <span class="rps-box computer-winner-text" id="computer-wins-text">I Win!</span>
+                <span class="rps-box tie-game-text" id="tie-game-text">Tied. Throw Again</span>
+                <span class="rps-box computer-winner-text" id="computer-wins-text">You Lose!</span>
             </p>
             <p class="centered">
                 <label id="bet-input">
@@ -92,9 +96,9 @@
                 <span class="rps-box stack-amount" id="computer-stack-count">0</span>
             </p>
             <p class="centered">
-                <span class="rps-box tally-heading" id="human-wins-message">Your Wins</span>
+                <span class="rps-box tally-heading" id="human-wins-message">Wins</span>
                 <span class="rps-box tally-heading" id="tie-games-message">Ties</span>
-                <span class="rps-box tally-heading" id="computer-wins-message">My Wins</span>
+                <span class="rps-box tally-heading" id="computer-wins-message">Losses</span>
             </p>
             <p class="centered">
                 <span class="rps-box tally-amount" id="human-wins-counter"></span>
